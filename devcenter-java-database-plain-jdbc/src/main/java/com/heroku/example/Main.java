@@ -28,7 +28,7 @@ public class Main {
 //		String dbUrl = "jdbc:postgres://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
 		
 //		String dbUrl ="jdbc:postgresql://elrwexgnaixdbs:a12f909465266552bb23e17d6087dc88e3e3286d2f501402a5e580dfd59da263@ec2-3-232-22-121.compute-1.amazonaws.com:5432/da5nf2bf0co74q";
-		System.out.println(dbUri);
+		System.out.println(dbUri.toString());
 		
 		return DriverManager.getConnection(dbUri);
 	}
