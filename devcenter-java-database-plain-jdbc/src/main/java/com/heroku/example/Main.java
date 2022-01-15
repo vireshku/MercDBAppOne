@@ -21,15 +21,16 @@ public class Main {
 	}
 
 	private static Connection getConnection() throws URISyntaxException, SQLException {
-		URI dbUri = new URI(System.getenv("DATABASE_URL"));
+		URI dbUri = new URI(System.getenv("JDBC_DATABASE_URL"));
 
 		String username = dbUri.getUserInfo().split(":")[0];
 		String password = dbUri.getUserInfo().split(":")[1];
 //		String dbUrl = "jdbc:postgres://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
 		
-		String dbUrl ="jdbc:postgresql://elrwexgnaixdbs:a12f909465266552bb23e17d6087dc88e3e3286d2f501402a5e580dfd59da263@ec2-3-232-22-121.compute-1.amazonaws.com:5432/da5nf2bf0co74q";
-
-		return DriverManager.getConnection(dbUrl);
+//		String dbUrl ="jdbc:postgresql://elrwexgnaixdbs:a12f909465266552bb23e17d6087dc88e3e3286d2f501402a5e580dfd59da263@ec2-3-232-22-121.compute-1.amazonaws.com:5432/da5nf2bf0co74q";
+		System.out.println(dbUri);
+		
+		return DriverManager.getConnection(dbUri);
 	}
 
 }
